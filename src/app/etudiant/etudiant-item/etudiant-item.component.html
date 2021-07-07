@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">{{etudiant?.prenom}} {{etudiant?.nom}}</h4>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Date Naiss.</th>
+                    <td>{{etudiant?.dateNaissance}}</td>
+                    <th>Lieu Naiss.</th>
+                    <td>{{etudiant?.lieuNaissance}}</td>
+                </tr>
+                <tr>
+                    <th>Sexe</th>
+                    <td>{{etudiant?.sexe}}</td>
+                    <th>Etat</th>
+                    <td>
+                        <input type="checkbox" [value]="etudiant?.etat" [disabled]="true">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <button (click)="informerSuppression()"
+                class="btn btn-sm btn-danger float-right">Supprimer</button>
+        </p>
+    </div>
+</div>

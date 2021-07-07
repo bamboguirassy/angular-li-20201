@@ -1,0 +1,10 @@
+<div>
+  <label for="couleur">Couleur</label>
+  <input type="color" [(ngModel)]="couleur">
+  <label for="largeur">Largeur</label>
+  <input type="number" [(ngModel)]="hauteur">
+  <label for="hauteur">Hauteur</label>
+  <input type="number" [(ngModel)]="largeur">
+</div>
+{{couleur}}
+<div style="width: {{largeur}}px; height: {{hauteur}}px; border: 2px solid black; background-color: {{couleur}};"></div>

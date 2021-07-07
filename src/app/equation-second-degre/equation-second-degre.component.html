@@ -1,0 +1,32 @@
+<form action="">
+  <h1>Bienvenue dans l'application de résolution d'une équation du second dégré</h1>
+  <div>
+    <label for="a">Saisir A</label>
+    <br>
+    <input type="number" name="a" id="a" [(ngModel)]="a">
+  </div>
+  <div>
+    <label for="b">Saisir B</label>
+    <br>
+    <input type="number" name="b" id="b" [(ngModel)]="b">
+  </div>
+  <div>
+    <label for="c">Saisir C</label>
+    <br>
+    <input type="number" name="c" id="c" [(ngModel)]="c">
+  </div>
+  <div>
+    <button (click)="resoudre()">Résoudre</button>
+  </div>
+</form>
+
+<hr>
+<h2>Résultat</h2>
+<code>
+  {{message}}
+</code>
+<ul>
+  <li *ngIf="delta>0">X1: {{x1}}</li>
+  <li *ngIf="delta>0">X2: {{x2}}</li>
+  <li *ngIf="delta==0">X0: {{x0}}</li>
+</ul>

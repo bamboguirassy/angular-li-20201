@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nom Fruit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr [ngStyle]="{'background': isFirst?'red':''}" [style.background]="isLast?'green':''" *ngFor="let fruit of fruits; let i=index; let isFirst=first; let isLast=last">
+      <td>{{i}}</td>
+      <td>{{fruit}}</td>
+    </tr>
+  </tbody>
+</table>
