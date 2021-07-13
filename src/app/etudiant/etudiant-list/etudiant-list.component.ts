@@ -9,21 +9,18 @@ import { Component, OnInit } from '@angular/core';
 export class EtudiantListComponent implements OnInit {
 
   etudiants: Etudiant[];
-  etudiant: Etudiant;
   hauteur = 400;
   largeur = 200;
 
   constructor() {
-    this.etudiant = new Etudiant();
     this.etudiants = [];
   }
 
   ngOnInit(): void {
   }
 
-  ajouter() {
-    this.etudiants.push(this.etudiant);
-    this.etudiant = new Etudiant();
+  ajouter(etudiant: Etudiant) {
+    this.etudiants.push(etudiant);
   }
 
   supprimer(etudiant: Etudiant) {

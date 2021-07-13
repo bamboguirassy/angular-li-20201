@@ -17,7 +17,7 @@ export class EtudiantItemComponent implements OnInit {
   }
 
   informerSuppression()  {
-    this.infoSup.emit(this.etudiant);
+    this.infoSup.emit();
   }
 
 }

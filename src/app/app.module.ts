@@ -12,6 +12,7 @@ import { FruitListComponent } from './fruit-list/fruit-list.component';
 import { EtudiantListComponent } from './etudiant/etudiant-list/etudiant-list.component';
 import { EtudiantItemComponent } from './etudiant/etudiant-item/etudiant-item.component';
 import { CardComponent } from './card/card.component';
+import { EtudiantNewComponent } from './etudiant/etudiant-new/etudiant-new.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CardComponent } from './card/card.component';
     EtudiantListComponent,
     EtudiantItemComponent,
     CardComponent,
+    EtudiantNewComponent,
   ],
   imports: [
     BrowserModule,
