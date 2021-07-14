@@ -1,3 +1,4 @@
+import { FormationService } from './../formation.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +12,9 @@ export class FormationShowComponent implements OnInit {
 
   formation: any;
 
-  constructor(public activatedRoute: ActivatedRoute, public httpClient: HttpClient) { }
+  constructor(public activatedRoute: ActivatedRoute,
+     public httpClient: HttpClient,
+     public formationSrv: FormationService) { }
 
   ngOnInit(): void {
     // recuperer la parametre id depuis la route
@@ -20,7 +23,7 @@ export class FormationShowComponent implements OnInit {
   }
 
   findOneById(id: number) {
-    this.httpClient.get('https://api.stagenligne.com/api/formation/public/' + id)
+    this.formationSrv.findOneById(id)
       .subscribe((response) => {
         this.formation = response;
       }, err => {

@@ -1,3 +1,4 @@
+import { FormationService } from './../formation.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
@@ -10,7 +11,8 @@ export class FormationListComponent implements OnInit {
 
   formations: any[] = [];
 
-  constructor(public httpClient: HttpClient) { }
+  constructor(public httpClient: HttpClient,
+     public formationSrv: FormationService) { }
   
 
   ngOnInit(): void {
@@ -18,7 +20,8 @@ export class FormationListComponent implements OnInit {
   }
 
   findAllFormation() {
-    this.httpClient.get('https://api.stagenligne.com/api/formation/public/active/').subscribe((response: any) => {
+    this.formationSrv.findAll()
+    .subscribe((response: any) => {
       console.log('reponse', response);
       this.formations = response.items;
     }, (error) => {
