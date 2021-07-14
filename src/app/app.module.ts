@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormationListComponent } from './formation/formation-list/formation-list.component';
 import { FormationShowComponent } from './formation/formation-show/formation-show.component';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
+import { ProduitListComponent } from './produit/produit-list/produit-list.component';
+import { UiSwitchModule } from 'ngx-ui-switch';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     WeatherComponent,
     FormationListComponent,
     FormationShowComponent,
+    ProduitListComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,16 @@ import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    LoadingBarHttpClientModule
+    LoadingBarHttpClientModule,
+    UiSwitchModule.forRoot({
+      size: 'small',
+      color: 'rgb(0, 189, 99)',
+      switchColor: '#80FFA2',
+      defaultBgColor: '#00ACFF',
+      defaultBoColor : '#476EFF',
+      checkedLabel: 'Activé',
+      uncheckedLabel: 'Désactivé'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

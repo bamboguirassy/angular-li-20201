@@ -23,6 +23,7 @@
     "@ngx-loading-bar/http-client": "^5.1.2",
     "bootstrap": "^4.6.0",
     "jquery": "^3.6.0",
+    "ngx-ui-switch": "^12.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
