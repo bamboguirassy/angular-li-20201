@@ -1,6 +1,5 @@
 import { FormationService } from './../formation.service';
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-formation-list',
@@ -11,8 +10,7 @@ export class FormationListComponent implements OnInit {
 
   formations: any[] = [];
 
-  constructor(public httpClient: HttpClient,
-     public formationSrv: FormationService) { }
+  constructor(public formationSrv: FormationService) { }
   
 
   ngOnInit(): void {

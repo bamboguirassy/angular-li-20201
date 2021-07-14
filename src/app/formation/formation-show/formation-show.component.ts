@@ -1,5 +1,4 @@
 import { FormationService } from './../formation.service';
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -13,7 +12,6 @@ export class FormationShowComponent implements OnInit {
   formation: any;
 
   constructor(public activatedRoute: ActivatedRoute,
-     public httpClient: HttpClient,
      public formationSrv: FormationService) { }
 
   ngOnInit(): void {
