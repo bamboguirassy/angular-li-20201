@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Liste des formations</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>N°</th>
+                    <th>Photo</th>
+                    <th>Nom</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let formation of formations; let i = index">
+                    <td scope="row">{{i+1}}</td>
+                    <td><img width="50" [src]="formation?.photoPath" alt=""></td>
+                    <td>{{formation?.nom}}</td>
+                    <td>
+                        <a [routerLink]="['/formation', formation?.id]" name="" id="" class="btn btn-primary" href="#" role="button">Voir</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

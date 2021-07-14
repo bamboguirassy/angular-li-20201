@@ -2,53 +2,63 @@
     <div class="form-group">
         <label for="prenom" class="col-sm-1-12 col-form-label">Prénom</label>
         <div class="col-sm-1-12">
-            <input #prenomInput="ngModel" minlength="2" [required]="true" [(ngModel)]="etudiant.prenom" type="text" class="form-control" [ngClass]="{'is-valid': (prenomInput.valid && prenomInput.touched),'is-invalid':(prenomInput.invalid && prenomInput.touched)}" name="prenom"
-                id="prenom" placeholder="">
-                <small class="b text-danger" *ngIf="prenomInput?.control?.errors?.required">Le champ est obligatoire</small>
-                <small class="b text-danger" *ngIf="prenomInput?.control?.errors?.minlength">Le nombre de caractère minimal est {{prenomInput?.control?.errors?.minlength?.requiredLength}} alors que vous avez mis {{prenomInput?.control?.errors?.minlength?.actualLength}}</small>
+            <input #prenomInput="ngModel" minlength="2" [required]="true" [(ngModel)]="etudiant.prenom" type="text"
+                class="form-control"
+                [ngClass]="{'is-valid': (prenomInput.valid && prenomInput.touched),'is-invalid':(prenomInput.invalid && prenomInput.touched)}"
+                name="prenom" id="prenom" placeholder="">
+            <small class="b text-danger" *ngIf="prenomInput?.control?.errors?.required">Le champ est obligatoire</small>
+            <small class="b text-danger" *ngIf="prenomInput?.control?.errors?.minlength">Le nombre de caractère minimal
+                est {{prenomInput?.control?.errors?.minlength?.requiredLength}} alors que vous avez mis
+                {{prenomInput?.control?.errors?.minlength?.actualLength}}</small>
         </div>
     </div>
     <div class="form-group">
         <label for="nom" class="col-sm-1-12 col-form-label">Nom</label>
         <div class="col-sm-1-12">
-            <input minlength="2" [required]="true" [(ngModel)]="etudiant.nom" type="text" class="form-control" name="nom" id="nom"
-                placeholder="">
+            <input [ngClass]="{'is-valid': (prenomInput.valid && prenomInput.touched),'is-invalid':(prenomInput.invalid && prenomInput.touched)}" #nomModel="ngModel" minlength="2" [required]="true" [(ngModel)]="etudiant.nom" type="text"
+                class="form-control" name="nom" id="nom" placeholder="">
+            <small class="b text-danger" *ngIf="nomModel?.control?.errors?.required">Le champ est obligatoire</small>
+            <small class="b text-danger" *ngIf="nomModel?.control?.errors?.minlength">Le nombre de caractère minimal
+                est {{nomModel?.control?.errors?.minlength?.requiredLength}} alors que vous avez mis
+                {{nomModel?.control?.errors?.minlength?.actualLength}}</small>
         </div>
     </div>
     <div class="form-group">
         <label for="dateNaissance" class="col-sm-1-12 col-form-label">Date Naissance</label>
         <div class="col-sm-1-12">
-            <input [required]="true" [(ngModel)]="etudiant.dateNaissance" type="date" class="form-control"
+            <input [ngClass]="{'is-valid': (prenomInput.valid && prenomInput.touched),'is-invalid':(prenomInput.invalid && prenomInput.touched)}" #inputDN="ngModel" [required]="true" [(ngModel)]="etudiant.dateNaissance" type="date" class="form-control"
                 name="dateNaissance" id="dateNaissance" placeholder="">
+                <small class="b text-danger" *ngIf="inputDN?.control?.errors?.required">Le champ est obligatoire</small>
         </div>
     </div>
     <div class="form-group">
         <label for="lieuNaissance" class="col-sm-1-12 col-form-label">Lieu Naissance</label>
         <div class="col-sm-1-12">
-            <input [required]="true" [(ngModel)]="etudiant.lieuNaissance" type="text" class="form-control"
+            <input [ngClass]="{'is-valid': (inputLN.valid && inputLN.touched),'is-invalid':(prenomInput.invalid && prenomInput.touched)}" #inputLN="ngModel" [required]="true" [(ngModel)]="etudiant.lieuNaissance" type="text" class="form-control"
                 name="lieuNaissance" id="lieuNaissance" placeholder="">
+                <small class="b text-danger" *ngIf="inputLN?.control?.errors?.required">Le champ est obligatoire</small>
         </div>
     </div>
     <div class="form-group">
         <label for="sexe" class="col-sm-1-12 col-form-label">Sexe</label>
         <div class="col-sm-1-12">
-            <select required="required" [(ngModel)]="etudiant.sexe" class="form-control" name="sexe" id="sexe">
+            <select [ngClass]="{'is-valid': (sexeModel.valid && sexeModel.touched),'is-invalid':(prenomInput.invalid && prenomInput.touched)}" #sexeModel="ngModel" required="required" [(ngModel)]="etudiant.sexe" class="form-control" name="sexe" id="sexe">
                 <option value="Masculin">Masculin</option>
                 <option value="Féminin">Féminin</option>
             </select>
+            <small class="b text-danger" *ngIf="sexeModel?.control?.errors?.required">Le champ est obligatoire</small>
         </div>
     </div>
     <div class="form-group">
         <label for="etat" class="col-sm-1-12 col-form-label">Etat</label>
         <div class="col-sm-1-12">
-            <input [(ngModel)]="etudiant.etat" type="checkbox" class="form-control" name="etat"
-                id="etat" placeholder="">
+            <input [(ngModel)]="etudiant.etat" type="checkbox" class="form-control" name="etat" id="etat"
+                placeholder="">
         </div>
     </div>
     <div class="form-group">
         <div class="offset-sm-2 col-sm-10">
-            <button [disabled]="form.invalid" type="submit"
-                class="btn btn-primary float-right">Enregistrer</button>
+            <button [disabled]="form.invalid" type="submit" class="btn btn-primary float-right">Enregistrer</button>
         </div>
     </div>
 </form>

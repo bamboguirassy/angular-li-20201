@@ -1,0 +1,32 @@
+<form>
+    <div class="form-group">
+        <label for="cityName">Nom Ville</label>
+        <input [(ngModel)]="cityName" type="text" name="cityName" id="cityName" class="form-control" placeholder=""
+            aria-describedby="cityNameId">
+        <small id="cityNameId" class="text-muted">Donner le nom de la ville</small>
+    </div>
+    <div>
+        <button (click)="getWeatherData()" type="button" class="btn btn-primary">Charger</button>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            {{data|json}}
+        </div>
+    </div>
+</form>
+<div class="row">
+    <div class="col-12">
+        <button (click)="getSecondWeatherData()">load city 2 data</button>
+    </div>
+    <div class="col-12">
+        <div class="jumbotron">
+            <h1 class="display-3">SecondWeather Data</h1>
+            <p class="lead">{{data2|json}}</p>
+            <hr class="my-2">
+            <p>More info</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+            </p>
+        </div>
+    </div>
+</div>

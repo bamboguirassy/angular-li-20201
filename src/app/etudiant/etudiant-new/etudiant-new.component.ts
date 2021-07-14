@@ -1,5 +1,6 @@
 import { Etudiant } from './../etudiant';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'etudiant-new',
